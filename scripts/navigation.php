@@ -29,10 +29,10 @@
             <div class="nav-collapse">
             	<ul class="nav">
                 	<li class="active"><a href="#">Home</a></li>
-                	<li><a href="#">Showcase</a></li>
-                	<li><a href="#">Get in touch!</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">SparkliTech Inc</a></li>
+                	<li><a href="#">Inspiration</a></li>
+                	<li><a href="#">Makerspaces</a></li>
+                    <li><a href="#">Make-a-thons</a></li>
+                    <li><a href="#">Profile</a></li>
                 </ul>
             </div>
             

@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+
+SPARKLING SCIENCE CUSTOM CSS DEFINITIONS
+========================================
+
+*/
+
+.navbar .nav > li > a{
+	padding:15px 10px;
+}
+
+.navbar .btn-group .btn {
+	margin-top:6px;
+}
+
+body {
+	background:#F3F3F3;
+	padding-bottom: 40px;
+}
+
+.container{
+	padding:19px;
+}
+
+
+footer{
+	padding:20px;
+}
+
+
+/* WELCOME BOX CSS DEFINITIONS */
+
+#welcomeBox{
+	/*  url(../img/grid-18px-masked.png) repeat-x; */
+
+	/*background: #ccf1fc;
+	background: -moz-radial-gradient(center, ellipse cover,  #ccf1fc 0%, #a2ddef 40%, #92cbdb 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ccf1fc), color-stop(40%,#a2ddef), color-stop(100%,#92cbdb));
+	background: -webkit-radial-gradient(center, ellipse cover,  #ccf1fc 0%,#a2ddef 40%,#92cbdb 100%);
+	background: -o-radial-gradient(center, ellipse cover,  #ccf1fc 0%,#a2ddef 40%,#92cbdb 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  #ccf1fc 0%,#a2ddef 40%,#92cbdb 100%);
+	background: radial-gradient(ellipse at center,  #ccf1fc 0%,#a2ddef 40%,#92cbdb 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccf1fc', endColorstr='#92cbdb',GradientType=1 );*/
+	
+	margin-top: 50px;
+    box-shadow: 0px -5px 30px -10px rgb(163, 212, 245);
+    -webkit-box-shadow:0px -5px 30px -10px rgb(163, 212, 245); 
+    -moz-box-shadow:0px -5px 30px -10px rgb(163, 212, 245); 
+	border-radius: 10px 10px 0px 0px;
+	background:#FFF;
+	//padding:40px;
+	margin-top:80px;
+	border-top:none;
+}
+
+#welcomeBoxTitle{
+	font-size:78px;
+	display:block;
+	line-height:1em;
+	width:800px;
+	margin:auto;
+/*	text-shadow:#FFF -2px 2px 2px;*/
+	color:rgb(46, 46, 46);
+}
+
+#welcomeBoxDescription{
+	font-size:20px;
+	line-height:1.5em;
+	color:#033;
+	text-shadow: #FFF 1px 1px 3px;
+	text-align:center;
+	margin-top:10px;
+}
+
+#welcomeBoxDivisionButton div{
+	display:block;
+	height:30px;
+	font-size:24px;
+	margin-bottom:5px;
+}
+
+
+#tabBox{
+	background:#F9F9F9;
+}
+
+footer{
+	text-align:center;
+}

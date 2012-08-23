@@ -43,25 +43,26 @@ footer {
     			<label class="control-label" for="inputName">Makerspace name</label>
     			<div class="controls">
       				<input type="text" id="inputName" placeholder="Makerspace Name" name="name">
+      				<span style="color:#AAA;">Cannot be edited after registration</span>
     			</div>
   			</div>
   			<div class="control-group">
-    			<label class="control-label" for="inputShortName">Choose url for makerspace page</label>
+    			<label class="control-label" for="inputSparkUrl">Choose url for makerspace page</label>
     			
     			<div class="controls">
     				<div class="input-prepend">
-  					<span class="add-on" style="color:#AAA;">http://www.sparklingscience.com/</span><input id="inputShortName" type="text" placeholder="makerspacename" name="shortName">
-  					<p class="help-block">We recommend an url based on the name of your makerspace, but you can set the url to whatever you like.</p> 
+  					<span class="add-on" style="color:#AAA;">http://www.sparklingscience.com/</span><input id="inputSparkUrl" type="text" placeholder="makerspacename" name="sparkUrl">
+  					<span style="color:#AAA;">Cannot be edited after registration</span>
 					</div>
     			</div>
   			</div>
   			<div class="control-group">
-  				<label></label>
-  				<div class="controls">
-				<h4> Note that any of the following information can be changed at a later point</h4>
-				<br />
-				</div>
-			</div>
+    			<label class="control-label" for="inputExistingUrl">Existing url</label>
+    			<div class="controls">
+      				<input type="text" id="inputExistingUrl" placeholder="www.yourmakerspace.com" name="existingUrl">
+      				<span style="color:#AAA;">If you have any. Otherwise your new url will suffice.</span>
+    			</div>
+  			</div>
   			<div class="control-group">
     			<label class="control-label" for="inputDescription">Description</label>
     			<div class="controls">
@@ -80,7 +81,7 @@ footer {
     			</div>
   			</div>
   			<div class="control-group">
-    			<label class="control-label" for="inputFee">Fee</label>
+    			<label class="control-label" for="inputFee">Annual fee</label>
     			<div class="controls">
       				<input type="text" id="inputDescription" placeholder="e.g. 200&#36; or 50SEK or simply 0" name="fee">
     			</div>
@@ -119,8 +120,8 @@ $(document).ready(function(){
 		};
 
 		$("#inputName").keyup(function(){
-			var str =  $(this).val().toLowerCase().replace(/[^a-z0-9\s]/gi, '').split(' ').join('');
-			$('#inputShortName').val(str);
+			var str =  $(this).val().toLowerCase().replace(/[^a-z0-9\s]/gi, '').split(' ').join(''); //jQuery
+			$('#inputSparkUrl').val(str);
 		});
 
 		    $('#createmakerspace').submit(function() {
