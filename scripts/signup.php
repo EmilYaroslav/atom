@@ -62,7 +62,7 @@ footer{
 </head>
 
 <body>
-<?php include("./navigation.php");
+<?php include("navigation.php");
 ?>
 <form class="well" accept-charset="UTF-8" action="/signup" data-event-conversion="973716287,2EeUCIGO2QIQv_am0AM" data-event-tracking="SignUp,Sendverification,Signuppage" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="IlgyYm63D7ifzb3PS6SwNkDjiib2PhZ3ui864Cr7uKU=" /></div>
     <input id="timezone" name="timezone" type="hidden" />

@@ -1,35 +1,32 @@
-
 <?php
 /*
-$user_name = "moretode_emil" ;
-$password = "emilisawesome";
-$database = "moretode_emil";
-$server = "localhost";
+$servername='mydb24.surf-town.net';
+$dbusername='tedxvas_abhinit';
+$dbpassword='abhinit2211';
+$dbname="tedxvas_scoopitwiz";
 */
-?>
 
-<?php
+$dbusername = "root" ;
+$dbpassword = "root";
+$dbname = "hackathon";
+$servername = "localhost";
 
-$user_name = "root" ;
-$password = "root";
-$database = "hackathon";
-$server = "localhost:8889";
-
-?>
-<?php
-$con = mysql_connect($server, $user_name, $password);
-if (!$con)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
-
-$db_found = mysql_select_db($database);
-
-/*if ($db_found) {
-print "Database Found <br />";
-}
-else {
-print "Database NOT Found";
-}
+/*
+$servername='localhost';
+$dbusername='abhinit';
+$dbpassword='abhinit';
+$dbname="hackathon";
 */
+connecttodb($servername,$dbname,$dbusername,$dbpassword);
+
+function connecttodb($servername,$dbname,$dbuser,$dbpassword)
+{
+	global $conn;
+	$conn= new mysqli("$servername","$dbuser","$dbpassword","$dbname");
+	
+	//The following checks if there has been any error while connecting to the db, if so, we display the error.
+	if (mysqli_connect_errno()) {
+	  exit('Connect failed: '. mysqli_connect_error());
+	}
+}
 ?>

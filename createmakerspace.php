@@ -8,31 +8,21 @@
 <meta name="author" content="">
 <link href="css/bootstrap-responsive.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
-<style type="text/css">
-
-body {
-	background: url(img/grid-18px-masked.png) repeat-x;
-	padding-top: 50px;
-	padding-bottom: 40px;
-}
-
-.container{
-	margin-top: 50px;
-}
-
-footer {
-	padding:20px;
-}
-</style>
+<link href="css/style.css" rel="stylesheet">
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+<style>
+.container:nth-of-type(2){
+	margin-top:80px!important;
+}
+</style>
 </head>
 
 <body>
 
-<?php include("./scripts/navigation.php");
+<?php include("scripts/navigation.php");
 ?>
 <div class="container">
 	<div class="well">
@@ -75,8 +65,7 @@ footer {
       				<input type="text" id="inputLocation" placeholder="Address" name="address"><br />
       				<input type="text" id="inputLocation" placeholder="City" name="city" style="margin-top:5px"><br />
       				<select id="countries" name="countries" style="margin-top:5px">
-      				<?php include("scripts/selectCountry.php")
-      				?>
+      				<?php include("scripts/selectCountry.php");?>
       				</select>
     			</div>
   			</div>
@@ -94,11 +83,8 @@ footer {
 
 	</div>
 </div>
+<?php include("scripts/footer.php");?>
 
-
-<footer>
-	<p>&copy; SparkliTech AB, Sverige, 2012</p>
-</footer>
 <script src="js/jquery.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -131,7 +117,10 @@ $(document).ready(function(){
 		        //alert(content);
 		        $.post("scripts/createmakerspacescript.php",{data:content},
 		        	function(data){
-		        		alert(data);
+						if(data!="error"){
+							document.location = "makerspace.php?sparkUrl="+data;
+						}
+		        		//alert(data);
 		        	}) ;
 		        
 		    });

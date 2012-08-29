@@ -9,89 +9,103 @@
 
 <!-- Le styles -->
 <link href="css/bootstrap.css" rel="stylesheet">
-<style type="text/css">
-.navbar .nav > li > a{
-  padding:15px 10px;
-}
-
-.navbar .btn-group .btn {
-  margin-top:6px;
-}
-
-body {
-  background: url(img/grid-18px-masked.png) repeat-x;
-  padding-top: 50px;
-  padding-bottom: 40px;
-}
-
-.container{
-  margin-top: 50px;
-}
-
-.hero-unit{
-  background:rgb(179, 234, 255) url(img/grid-18px-masked.png) repeat-x;
-}
-
-.jA{
-/*  background:#8ED9FF;
-*/}
-
-.jAAttending > img{
-  margin:3px auto auto 3px;
-  height:32px;
-  border:3px solid #CCC;
-  width:auto;
-  cursor:pointer;
-}
-
-footer{
-  padding:20px;
-}
-
-.well{
-  background: rgb(239, 250, 255);
-}
-
-</style>
 <link href="css/bootstrap-responsive.css" rel="stylesheet">
-
+<link href="css/style.css" rel="stylesheet">
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+<style>
+.container:nth-of-type(2){
+	margin-top:80px!important;
+}
+
+footer{
+	margin-top:0;
+}
+</style>
 </head>
 
 <body>
-<?php include("./navigation.php");
-?>
-<form class="well" accept-charset="UTF-8" action="/signup" data-event-conversion="973716287,2EeUCIGO2QIQv_am0AM" data-event-tracking="SignUp,Sendverification,Signuppage" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="IlgyYm63D7ifzb3PS6SwNkDjiib2PhZ3ui864Cr7uKU=" /></div>
-    <input id="timezone" name="timezone" type="hidden" />
-    <input id="activation_code" name="activation_code" type="hidden" />
-    <input id="return_to" name="return_to" type="hidden" />
-    <input id="source_id" name="source_id" type="hidden" />
-    <input id="source_type" name="source_type" type="hidden" />
+<?php include("scripts/navigation.php");?>
+<div class="container" style="margin:80px auto auto auto;">
 
-    
+	<div class="well">
+		<h3 style="margin-left:30px;">Hello! Sign-up as a maker!</h3>
+		<br />
+        
+        
+    	<form class="form-horizontal" id="createmaker" action="/" method="post">
+  			<div class="control-group">
+    			<label class="control-label" for="inputEmail">E-mail</label>
+    			<div class="controls">
+      				<input type="text" id="inputEmail" placeholder="Your e-mail address" name="email">
+    			</div>
+  			</div>
+        
+  			<div class="control-group">
+    			<label class="control-label" for="inputPassword">Password</label>
+    			<div class="controls">
+    				<input id="inputPassword" type="password" placeholder="Enter Password" name="password">
+  					<span style="color:#AAA;">Minimum 8 characters</span>
+				</div>
+    		</div>
+            
+            
+			<div class="control-group">
+    			<label class="control-label" for="inputPassword2">Repeat Password</label>
+    			<div class="controls">
+    				<input id="inputPassword2" type="password" placeholder="Repeat Password" name="password2">
+  					<span style="color:#AAA;">Repeat your password</span>
+				</div>
+    		</div>
+  			<div class="form-actions">
+      			<button id="submitButton" class="btn btn-primary btn-large">Create</button>
+      		</div>
+		</form>
+        <img src="img/email.png" style="float:right;"/>        
 
-    <dl>
-      <dt>
-          <div class="email-tooltip">
-            <img alt="Down-arrow" class="email-arrow" src="https://d2cmuesa4snpwn.cloudfront.net/piped_assets/down-arrow-2427bf8fe10074add43c503604da51c8.png" />
-            <img alt="Up-arrow" class="email-arrow-bottom" src="https://d2cmuesa4snpwn.cloudfront.net/piped_assets/up-arrow-f1353d22d35272454ff27f85464c0f79.png" />
-            <img alt="Envelope" class="email-envelope" src="https://d2cmuesa4snpwn.cloudfront.net/piped_assets/envelope-222dc707235a0525f5e41837dd42d9df.png" />
-            <h2>Register a new Make-a-thon</h2>
-            <p>Use your work email address so you can find each other and connect more easily.</p>
-          <p class="subdued learn-more"><b>Your privacy is protected.</b> <a href="#" class="privacy-expand">Learn more.</a></p>
-          <p class="subdued learn-more-expanded hidden">Your email address and personal information are confidential and will not be sold or rented. Read more in our <a href="https://company.podio.com/privacy" target="blank">Privacy Policy</a></p>
-          </div>
-        <label for="email">Your email address<em>*</em></label>
-      </dt>
-        <dd><input id="email" type="email" name="email" value="" class="required" tabindex="1" autofocus="autofocus" /></dd>
-    </dl>
+	</div>
+</div>
 
-    <button type="submit" class="nextbutton flatbutton green" tabindex="2">Register</button>
+<?php include("scripts/footer.php");?>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $.fn.serializeObject = function()
+    {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
 
-</form>
-
+        $('#createmakerspace').submit(function() {
+          /* stop form from submitting normally */
+          event.preventDefault();
+            var content = JSON.stringify($('#createmaker').serializeObject());
+            //alert(content);
+            $.post("scripts/createsignup.php",{data:content},
+              function(data){
+            if(data!="error"){
+              document.location = "user.php?id="+data;
+            }
+                //alert(data);
+              }) ;
+            
+        });
+});
+</script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap-modal.js"></script>
 </body>
 </html>

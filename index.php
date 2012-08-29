@@ -21,39 +21,68 @@
 <body>
 
 <?php include("scripts/navigation.php"); ?>
-
 <div id="welcomeBox" class="container"> <!-- welcomeBox container start -->
-    <div class="span12"><br />
-	    <h1 id="welcomeBoxTitle"><img src="img/atom.png" style="margin-right:15px;" />Sparkling Science!</h1>
-        <div id="welcomeBoxDescription">
-            <h2>Ultimate creative soup of interdisciplinary collaboration (Scary huh?)</h2>
+    <div class="row"><br />
+    <div class="span12" id="centerRow">
+    	<div class="row-fluid" style="margin:35px auto;">
+        <div class="span12" style="text-align:center;">
+		    <h1 id="welcomeBoxTitle"><img src="img/atom.png" style="margin-right:15px;" />Sparkling Science!</h1><br />
+            <h2 style="text-align:center; color:#FFF;">Ever had a feeling you wanted to change the world<br />
+but didn't know how or where to start?</h2><br />
+            <div id="welcomeBoxDescription">
+            	<a href="#awesomeness"><button id="magicButton" class="btn btn-large btn-primary" style="padding:20px; font-size:22px;">Know how!</button></a>
+            </div>
+        </div>
         </div>
     </div>
-</div>	<!-- welcomeBox container end -->
-
-<div id="tabBox" class="container"> <!-- tabBox container start -->
-	<div class="row-fluid">
-    <div class="span12">
-    	<div class="row-fluid">
-            <div class="well span4">
-            	<h1>Dream</h1>
-                <hr />
-                jkhkj
-            </div>
-            <div class="well span4">
-            	<h1>Engage</h1>
-            </div>
-            <div class="well span4">
-            	<h1>Make</h1>
-            </div>
-         </div>
     </div>
-	</div>
 </div>	<!-- welcomeBox container end -->
-	
-<footer> <!-- Footer start -->
-	<p style="color:#09C;">&copy; SparkliTech AB, Sverige, 2012</p>
-</footer> <!-- Footer end -->
+<div id="introBox">
+Supporters of the DIY community.
+</div>
+
+<div id="awesomeness" class="container"><br />
+<br />
+<br />
+<br />
+<h1 id="welcomeText">Welcome to Sparkling Science!</h1>
+<br />
+	<div class="row">
+    	<div class="span12">
+        	<div class=" row-fluid">
+            	<div class="span4">
+                	<img src="img/dreamer.jpg" />
+                    <div class="steps">
+						<h2>Step 1: Dream</h2>
+                        <p>Dream, day and night, live it, feel it and give it a place to grow. For this is the only way by which it will transcend your mind and become real. We will help make your dreams come true!<br /><br />
+                        <a href="http://www.sparklingscience.com/dream/"<button class="btn btn-primary btn-large">Dream on!</button></a>
+                        </p>
+                    </div>
+                </div>
+            	<div class="span4">
+                	<img src="img/engage.png" />
+                    <div class="steps">
+						<h2>Step 2: Engage</h2>
+                        <p>Expertise can never replace enthusiasm. See to what great places it can take you. “When you dream alone it’s only a dream but when you dream together it’s the beginning of a new reality.”<br /><br />
+						<a href="engage.php"><button class="btn btn-large btn-primary">Hop in!</button></a>
+                        </p>
+                    </div>
+                </div>
+            	<div class="span4">
+                	<img src="img/maker.png" />
+                    <div class="steps">
+						<h2>Step 3: Make</h2>
+                        <p>Now you know the people and have seen the potential, you have an idea, you are there! Make it happen with your team! Use it smart, use it strong. You are just one step away from becoming the maker you always wanted to be!<br /><br />
+                        <a href="make.php"><button class="btn btn-warning btn-large">Show me the goods!<i class="icon-arrow-right icon-white"></i></button></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php include("scripts/footer.php");?>
 
 <!-- Placed at the bottom of the page to aid faster page loading!! -->
 
@@ -70,11 +99,6 @@
 <script src="js/bootstrap-collapse.js"></script>
 <script src="js/bootstrap-carousel.js"></script>
 <script src="js/bootstrap-typeahead.js"></script>
-
-<script>
-$(document).ready(function(){
-						   $('.carousel').carousel()
-						   });
-</script>
+<script src="js/SmoothScroll.js"></script>
 </body>
 </html>
